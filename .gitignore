@@ -1,0 +1,4 @@
+node_modules
+postgresdata
+*.log
+.DS_Store
