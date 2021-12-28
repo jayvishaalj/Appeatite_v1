@@ -10,7 +10,6 @@ module.exports = async (userData) => {
     } else if (user.verified === false) {
         throw new Error("User Already Present, Please Verify OTP!")
     } else {
-        console.log("HERE")
         throw new Error('User Already Exist!')
     }
 };

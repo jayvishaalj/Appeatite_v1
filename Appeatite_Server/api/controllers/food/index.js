@@ -1,0 +1,1 @@
+exports.getMenuOfRestaurant = require('./getMenuOfRestaurant');

@@ -6,12 +6,13 @@ const restaurantSchema = mongoose.Schema({
   id: String,
   name: String,
   address: String,
-  phone: Number,
+  phno: Number,
   password: String,
   img_url: String,
   lat: Number,
   long: Number,
   merchant_id: Number,
+  group_id: String,
   menu: [menuSchema],
 });
 

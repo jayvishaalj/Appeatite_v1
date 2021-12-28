@@ -1,16 +1,17 @@
 const express = require('express');
 const router = express();
-const { addNewOTP } = require('../helpers/OTP')
 
-// const foodRouter = require('./food/router');
-// const restaurantRooter = require('./restaurant/router');
+const foodRouter = require('./food/router');
+const restaurantRooter = require('./restaurants/router');
 const userRouter = require('./users/router');
+const menuRouter = require('./menu/router');
 // const orderRouter = require('./order/router');
 // const paymentRouter = require('./payment/router');
 
-// router.use('/food', foodRouter);
-// router.use('/restaurant', restaurantRooter);
+router.use('/food', foodRouter);
+router.use('/restaurant', restaurantRooter);
 router.use('/user', userRouter);
+router.use('/menu', menuRouter);
 // router.use('/order', orderRouter);
 // router.use('/payment', paymentRouter);
 
