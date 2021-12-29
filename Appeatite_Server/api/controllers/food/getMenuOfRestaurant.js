@@ -3,13 +3,12 @@ const logger = require('../../../config/logger')(module);
 
 module.exports = async (restaurantId) => {
   try {
-    return restaurantModel.find({ id: restaurantId }, 'menu', async (_err, menu) => {
-      if (menu != null) {
-        return menu;
-      } else {
-        throw new Error("No Items Available");
-      }
-    });
+    const menu = await restaurantModel.findOne({ id: restaurantId }, 'menu');
+    if (menu != null && menu.menu !== null) {
+      return menu.menu;
+    } else {
+      throw new Error("No Items Available");
+    }
   } catch (error) {
     logger.log('error', `Fetching Restaurant, error: ${error}`);
     throw (error);

@@ -7,7 +7,7 @@ module.exports = async (resId, menuData) => {
         const restaurant = await checkRestaurantExists({ id: resId });
         const count = restaurant.menu.length;
         if (restaurant !== null) {
-            const restaurant = await editRestaurantDetails({ id: resId }, { $push: { menu: { ...menuData, id: `${resId}_ITEM_${count + 1}` } } });
+            const restaurant = await editRestaurantDetails({ id: resId }, { $push: { menu: { ...menuData, id: `${resId}_ITEM_${count + 1}`, availablity: true } } });
             return restaurant;
         } else {
             throw new Error('Restaurant not Present!')
