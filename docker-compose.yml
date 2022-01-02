@@ -19,6 +19,9 @@ services:
         POSTGRES_DB: appeatite
         PORT: 3001
         SOCKET_PORT: 3002
+        SETU_SANDBOX_URL: "https://uat.setu.co/api"
+        SETU_PROD_URL: "https://prod.setu.co/api"
+        DEVELOPMENT: 1
       depends_on:
         - mongo
   mongo:

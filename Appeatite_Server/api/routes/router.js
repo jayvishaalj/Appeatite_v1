@@ -6,14 +6,14 @@ const restaurantRooter = require('./restaurants/router');
 const userRouter = require('./users/router');
 const menuRouter = require('./menu/router');
 const orderRouter = require('./orders/router');
-// const paymentRouter = require('./payment/router');
+const paymentRouter = require('./payment/router');
 
 router.use('/food', foodRouter);
 router.use('/restaurant', restaurantRooter);
 router.use('/user', userRouter);
 router.use('/menu', menuRouter);
 router.use('/order', orderRouter);
-// router.use('/payment', paymentRouter);
+router.use('/payment', paymentRouter);
 
 /**
  * @swagger

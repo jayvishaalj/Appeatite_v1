@@ -11,7 +11,7 @@ const restaurantSchema = mongoose.Schema({
   img_url: String,
   lat: Number,
   long: Number,
-  merchant_id: Number,
+  merchant_id: String,
   group_id: String,
   menu: [menuSchema],
 });

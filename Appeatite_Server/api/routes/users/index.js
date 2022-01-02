@@ -315,15 +315,11 @@ router.post('/login', async (req, res) => {
     const result = await userLogin(req.body.phno, req.body.password);
     if (result === null) {
       return res.status(500).json({ message: 'Oops! Sorry Some Error Occured Please Try Again Latter' });
-    } else if (result === -1) {
-      return res.status(201).json({ message: 'Wrong Credentials' });
-    } else if (result === 0) {
-      return res.status(202).json({ message: 'User Doesnt Exists' });
     } else {
       return res.status(200).json({ token: result, message: 'User Logged In Succesfully!' });
     }
   } catch (error) {
-    logger.log('error', `User Register Error Occured ${JSON.stringify(error)}`);
+    logger.log('error', `User Login Error Occured ${JSON.stringify(error)}`);
     return res.status(500).json({ message: error.message })
   }
 });

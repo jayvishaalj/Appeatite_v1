@@ -1,0 +1,1 @@
+exports.createNewPayment = require('./createNewPayment');
